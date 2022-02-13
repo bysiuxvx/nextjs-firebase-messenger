@@ -6,7 +6,7 @@ const Header = () => {
     <Container>
       <Menu secondary>
         <Link href={"/login"}>Login</Link>
-        <Link href={"/"}>Home</Link>{" "}
+        <Link href={"/"}>Home</Link> {""}
       </Menu>
     </Container>
   )
