@@ -1,8 +1,8 @@
 import firebase from "firebase/compat/app"
 
-import Router from "next/router"
+import { signInWithPopup } from "firebase/auth"
 
-import { history } from "../src/helpers/helper"
+import { useRouter } from "next/router"
 
 import { auth } from "../src/firebase"
 
@@ -18,7 +18,32 @@ import {
 
 import { GoogleOutlined, FacebookOutlined } from "@ant-design/icons"
 
+import { FacebookAuthProvider } from "firebase/auth"
+import { Result } from "antd"
+
 const Login = () => {
+  const router = useRouter()
+
+  const fbLogin = () => {
+    const provider = new FacebookAuthProvider()
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user
+        const credential = FacebookAuthProvider.credentialFromResult(result)
+        const accessToken = credential.accessToken
+        console.log(user)
+      })
+      .catch((error) => {
+        const errorCode = error.code
+        const errorMessage = error.message
+        // The email of the user's account used.
+        const email = error.email
+        // The AuthCredential type that was used.
+        const credential = FacebookAuthProvider.credentialFromError(error)
+        console.log(errorCode)
+      })
+  }
+
   return (
     <Grid.Column className="login-page" verticalAlign="middle" color="pink">
       <Card centered className="login-form">
@@ -48,8 +73,29 @@ const Login = () => {
               </Button>
             </Container>
             <Container>
-              <Button onClick={() => history("/haha")}>
-                <FacebookOutlined /> Test
+              <Button onClick={fbLogin}>
+                {/* onClick={() =>
+                  signInWithPopup(auth, provider)
+                    .then((result) => {
+                      const user = result.user
+                      const credential =
+                        FacebookAuthProvider.credentialFromResult(result)
+                      const accessToken = credential.accessToken
+                      console.log(user)
+                    })
+                    .catch((error) => {
+                      const errorCode = error.code
+                      const errorMessage = error.message
+                      // The email of the user's account used.
+                      const email = error.email
+                      // The AuthCredential type that was used.
+                      const credential =
+                        FacebookAuthProvider.credentialFromError(error)
+                      console.log(errorCode)
+                    })
+                }
+              > */}
+                <FacebookOutlined /> Login with facebook
               </Button>
             </Container>
           </Card.Description>

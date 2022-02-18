@@ -1,6 +1,15 @@
 import Head from "next/head"
+import { useRouter } from "next/router"
+import { useEffect } from "react"
+import history from "../src/helpers/helper"
 
 const Home = () => {
+  const router = useRouter()
+
+  useEffect(() => {
+    if (router.pathname === "/") router.push("/login")
+  })
+
   return (
     <div>
       <Head>
