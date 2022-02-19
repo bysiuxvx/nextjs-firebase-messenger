@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from "react"
-import { history } from "../helpers/helper"
 import { auth } from "../firebase"
 import Router, { useRouter } from "next/router"
 
@@ -19,7 +18,7 @@ export const AuthProvider = ({ children }) => {
       setLoading(false)
       if (user) router.push("/chat")
     })
-  }, [user])
+  }, [user, router])
 
   const value = { user }
 
