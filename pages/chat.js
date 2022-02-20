@@ -10,14 +10,8 @@ import axios from "axios"
 
 import logo_svg from "../src/svg/bullterrier.svg"
 
-// import { ChatEngine } from "nextjs-chat-engine"
+const ChatWindow = dynamic(() => import("../src/components/ChatWindow"))
 
-// const ChatEngine = dynamic(() =>
-//   import("nextjs-chat-engine").then((module) => module.ChatEngine)
-// )
-// const MessageFormSocial = dynamic(() =>
-//   import("nextjs-chat-engine").then((module) => module.MessageFormSocial)
-// )
 const ChatEngine = dynamic(() =>
   import("react-chat-engine").then((module) => module.ChatEngine)
 )
@@ -96,22 +90,23 @@ const Chat = () => {
   }
 
   return (
-    <Container className="chat-page">
-      <Segment className="chat-nav">
-        <Container className="logo">
-          <Image src={logo_svg} height={80} alt="messenger logo" />
-        </Container>
-        <Button onClick={handleLogout}>Logout</Button>
-      </Segment>
-      <ChatEngine
-        height="calc(100vh - 150px)"
-        projectID="22cfe9ea-f525-4c6f-be4a-75ae67d95a40"
-        userName={user ? user.email : null}
-        userSecret={user ? user.uid : null}
-        MessageFormSocial={() => <MessageFormSocial />}
-      />
-    </Container>
-    // <div></div>
+    <ChatWindow user={user} handleLogout={handleLogout} />
+
+    // <Container className="chat-page">
+    //   <Segment className="chat-nav">
+    //     <Container className="logo">
+    //       <Image src={logo_svg} height={80} alt="messenger logo" />
+    //     </Container>
+    //     <Button onClick={handleLogout}>Logout</Button>
+    //   </Segment>
+    //   <ChatEngine
+    //     height="calc(100vh - 150px)"
+    //     projectID="22cfe9ea-f525-4c6f-be4a-75ae67d95a40"
+    //     userName={user ? user.email : null}
+    //     userSecret={user ? user.uid : null}
+    //     MessageFormSocial={() => <MessageFormSocial />}
+    //   />
+    // </Container>
   )
 }
 

@@ -1,11 +1,13 @@
-import { Container, Grid } from "semantic-ui-react"
+// import { Container, Grid } from "semantic-ui-react"
+
+import { Container, Flex, Center } from "@chakra-ui/react"
 
 const Layout = ({ children }) => {
   return (
-    <Container className="App">
-      <Grid centered className="main">
+    <Container centerContent maxW="container.xl" bg={"pink"} p={0}>
+      <Center h="100vh" centerContent bg={"yellow"} w="100%">
         {children}
-      </Grid>
+      </Center>
     </Container>
   )
 }

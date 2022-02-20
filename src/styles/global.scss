@@ -1,8 +1,9 @@
-@import "../../node_modules/semantic-ui-css/semantic.min.css";
+// @import "../../node_modules/semantic-ui-css/semantic.min.css";
 @import "../../node_modules/include-media/dist/include-media";
 @import "../../node_modules/quill/dist/quill.snow.css";
 
 #__next,
+html,
 .App,
 .main {
   height: 100%;
@@ -16,22 +17,20 @@ div#__next {
   align-items: center !important;
 }
 
-div.App {
-  display: flex !important;
-  flex-direction: column;
-  justify-content: center !important;
-  align-items: center !important;
-}
+// div.App {
+//   display: flex !important;
+//   flex-direction: column;
+//   justify-content: center !important;
+//   align-items: center !important;
+// }
 
 .main {
-  align-items: center;
-  width: 100vw;
   div.login-page {
-    display: flex;
-    justify-content: center;
-    align-items: center !important;
-    width: 50vw;
-    height: 50vh;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center !important;
+    // width: 50vw;
+    // height: 50vh;
     .login-form {
     }
     .button {
@@ -41,11 +40,11 @@ div.App {
 }
 
 div.login-page {
-  display: flex;
-  justify-content: center;
-  align-items: center !important;
-  width: 50vw;
-  height: 50vh;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center !important;
+  // width: 50vw;
+  // height: 50vh;
   .login-form {
   }
   .button {
