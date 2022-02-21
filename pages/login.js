@@ -1,5 +1,4 @@
 import { auth } from "../src/firebase"
-
 import dynamic from "next/dynamic"
 
 import {

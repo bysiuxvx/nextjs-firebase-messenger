@@ -1,19 +1,53 @@
 import React from "react"
-import { Container, Box, Heading, Center, Icon, Button } from "@chakra-ui/react"
+import {
+  Container,
+  Box,
+  Heading,
+  Center,
+  Icon,
+  Button,
+  Text,
+  Breadcrumb,
+  BreadcrumbItem,
+} from "@chakra-ui/react"
 import { GoogleOutlined, FacebookOutlined } from "@ant-design/icons"
+import Head from "next/head"
+
+import { ColorModeSwitch } from "./ColorModeSwitch"
 
 const LoginForm = ({ facebookLogin, googleLogin }) => {
   return (
-    <Box borderRadius={"xl"} bg={"aqua"} p={30}>
+    <Box borderRadius={"xl"} p={30}>
+      <Head>
+        <title>Best messenger ever!</title>
+      </Head>
+      <ColorModeSwitch />
       <Heading size={"md"}>Welcome to the better messenger! ✨</Heading>
       <Center>
-        <Button my={2} onClick={googleLogin}>
-          <Icon as={GoogleOutlined} /> Log in using Google
+        <Button my={2} onClick={googleLogin} pr={10}>
+          <Breadcrumb separator={"|"}>
+            <BreadcrumbItem cen>
+              <Icon as={GoogleOutlined} />
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+              <Text>Log in using Google</Text>
+            </BreadcrumbItem>
+          </Breadcrumb>
         </Button>
       </Center>
       <Center>
-        <Button onClick={facebookLogin}>
-          <Icon as={FacebookOutlined} /> Log in using Facebook
+        <Button
+          onClick={facebookLogin}
+          // colorScheme="pink"
+        >
+          <Breadcrumb separator={"|"}>
+            <BreadcrumbItem>
+              <Icon as={FacebookOutlined} />
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+              <Text>Log in using Facebook</Text>
+            </BreadcrumbItem>
+          </Breadcrumb>
         </Button>
       </Center>
     </Box>

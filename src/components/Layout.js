@@ -1,11 +1,13 @@
-// import { Container, Grid } from "semantic-ui-react"
-
-import { Container, Flex, Center } from "@chakra-ui/react"
+import { Container, Center, Flex } from "@chakra-ui/react"
+import dynamic from "next/dynamic"
 
 const Layout = ({ children }) => {
+  const ColorSwitchMode = dynamic(() => import("./ColorModeSwitch"))
+
   return (
-    <Container centerContent maxW="container.xl" bg={"pink"} p={0}>
-      <Center h="100vh" centerContent bg={"yellow"} w="100%">
+    <Container centerContent maxW="container.xl" p={0} overflow="hidden">
+      <Flex w={"100%"} h={"30px"}></Flex>
+      <Center h="100vh" centerContent w="100%">
         {children}
       </Center>
     </Container>

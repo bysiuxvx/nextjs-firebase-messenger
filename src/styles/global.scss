@@ -1,76 +1,13 @@
-// @import "../../node_modules/semantic-ui-css/semantic.min.css";
-@import "../../node_modules/include-media/dist/include-media";
 @import "../../node_modules/quill/dist/quill.snow.css";
 
-#__next,
+#__next {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
 html,
 .App,
 .main {
   height: 100%;
   width: 100%;
-}
-
-div#__next {
-  display: flex !important;
-  flex-direction: column;
-  justify-content: center !important;
-  align-items: center !important;
-}
-
-// div.App {
-//   display: flex !important;
-//   flex-direction: column;
-//   justify-content: center !important;
-//   align-items: center !important;
-// }
-
-.main {
-  div.login-page {
-    // display: flex;
-    // justify-content: center;
-    // align-items: center !important;
-    // width: 50vw;
-    // height: 50vh;
-    .login-form {
-    }
-    .button {
-      //   margin: 10px;
-    }
-  }
-}
-
-div.login-page {
-  // display: flex;
-  // justify-content: center;
-  // align-items: center !important;
-  // width: 50vw;
-  // height: 50vh;
-  .login-form {
-  }
-  .button {
-    //   margin: 10px;
-  }
-}
-
-div.chat-page {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  // display: flex !important;
-  // flex-direction: column;
-  // justify-content: center !important;
-  // align-items: center !important;
-  // background-color: red;
-
-  .chat-nav {
-    display: flex;
-    justify-content: center;
-  }
-  // .logo {
-  //   max-width: 80px !important;
-  // }
-  // .svg-logo {
-  //   max-width: 150px !important;
-  // }
 }

@@ -1,23 +1,14 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { auth } from "../src/firebase"
-import { Container, Card, Segment, Button, Grid } from "semantic-ui-react"
 
 import dynamic from "next/dynamic"
-import Image from "next/image"
 import { useRouter } from "next/router"
 import { useAuth } from "../src/contexts/AuthContext"
 import axios from "axios"
 
-import logo_svg from "../src/svg/bullterrier.svg"
+import { Spinner } from "@chakra-ui/react"
 
 const ChatWindow = dynamic(() => import("../src/components/ChatWindow"))
-
-const ChatEngine = dynamic(() =>
-  import("react-chat-engine").then((module) => module.ChatEngine)
-)
-const MessageFormSocial = dynamic(() =>
-  import("react-chat-engine").then((module) => module.MessageFormSocial)
-)
 
 const Chat = () => {
   const { user } = useAuth()
@@ -82,32 +73,14 @@ const Chat = () => {
     }
   }, [])
 
-  if (!user && loading && showChat) return "Please wait..."
+  if (!user && loading && showChat) return <Spinner />
   if (!user && !showChat) return <div />
 
   if (router.isFallback) {
-    return <div>Loading...</div>
+    return <Spinner size={"lg"} />
   }
 
-  return (
-    <ChatWindow user={user} handleLogout={handleLogout} />
-
-    // <Container className="chat-page">
-    //   <Segment className="chat-nav">
-    //     <Container className="logo">
-    //       <Image src={logo_svg} height={80} alt="messenger logo" />
-    //     </Container>
-    //     <Button onClick={handleLogout}>Logout</Button>
-    //   </Segment>
-    //   <ChatEngine
-    //     height="calc(100vh - 150px)"
-    //     projectID="22cfe9ea-f525-4c6f-be4a-75ae67d95a40"
-    //     userName={user ? user.email : null}
-    //     userSecret={user ? user.uid : null}
-    //     MessageFormSocial={() => <MessageFormSocial />}
-    //   />
-    // </Container>
-  )
+  return <ChatWindow user={user} handleLogout={handleLogout} />
 }
 
 export default Chat
