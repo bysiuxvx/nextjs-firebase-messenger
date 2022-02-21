@@ -1,34 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# **Next.js messenger** `under construction 🛠`
 
-## Getting Started
+## Description
 
-First, run the development server:
+Messenger app using [Firebase](https://firebase.google.com/) as the database platform, the chat component is provided by [Chat Engine](https://chatengine.io/).
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+The whole application was built using [chakra](https://chakra-ui.com/) as it's component and UI library. The app comes with light / dark mode 😎.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`This app is still far from complete. Currently working on theming some of the components so they look better with day / night mode. Still have not made up my mind about the default 'light' theme. Also planning to add other authentication methods, as well as the possibility to register directly in the app.`
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Demo
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- [Heroku](https://nextjs-messenger.herokuapp.com)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Thoughts
 
-## Learn More
+I just have to say - I really fell in love with chakra-ui ❤️.
+Working with this library is pure pleasure, the syntax is very simple and intuitive. Also it comes with already built in color modes, which can be used for day / night mode like in this case. It needs to be tweaked accordingly to our needs of course.
 
-To learn more about Next.js, take a look at the following resources:
+## Technologies
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Next.js
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Firebase
 
-## Deploy on Vercel
+Chat Engine
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+chakra-ui
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Axios
+
+SCSS
