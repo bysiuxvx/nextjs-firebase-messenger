@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
       setLoading(false)
       if (user) router.push("/chat")
     })
-  }, [user, router])
+  }, [user])
 
   const value = { user }
 

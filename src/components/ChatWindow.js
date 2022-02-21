@@ -44,7 +44,7 @@ const ChatWindow = ({ user, handleLogout }) => {
       <Head>
         <title>{user ? `${user.email}'s chat room` : "Chat room"}</title>
       </Head>
-      <Flex p={10} w={"100%"} justifyContent="space-between">
+      <Flex p={5} w={"100%"} justifyContent="space-between">
         <Center p={0} m={0} ml={150}>
           <Image
             src={logo_svg}

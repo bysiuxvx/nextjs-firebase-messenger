@@ -33,10 +33,7 @@ const LoginForm = ({ facebookLogin, googleLogin }) => {
         </Button>
       </Center>
       <Center>
-        <Button
-          onClick={facebookLogin}
-          // colorScheme="pink"
-        >
+        <Button onClick={facebookLogin}>
           <Breadcrumb separator={"|"}>
             <BreadcrumbItem>
               <Icon as={FacebookOutlined} />

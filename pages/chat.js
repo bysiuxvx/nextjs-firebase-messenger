@@ -65,7 +65,7 @@ const Chat = () => {
             .catch((error) => console.log(error))
         })
       })
-  }, [user, router])
+  }, [user])
 
   useEffect(() => {
     if (typeof document !== null) {
