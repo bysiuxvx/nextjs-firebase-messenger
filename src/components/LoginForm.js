@@ -13,15 +13,12 @@ import {
 import { GoogleOutlined, FacebookOutlined } from "@ant-design/icons"
 import Head from "next/head"
 
-import { ColorModeSwitch } from "./ColorModeSwitch"
-
 const LoginForm = ({ facebookLogin, googleLogin }) => {
   return (
     <Box borderRadius={"xl"} p={30}>
       <Head>
         <title>Best messenger ever!</title>
       </Head>
-      <ColorModeSwitch />
       <Heading size={"md"}>Welcome to the better messenger! ✨</Heading>
       <Center>
         <Button my={2} onClick={googleLogin} pr={10}>
