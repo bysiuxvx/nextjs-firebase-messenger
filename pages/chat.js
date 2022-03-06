@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react"
-import { auth } from "../src/firebase"
 
 import dynamic from "next/dynamic"
 import { useRouter } from "next/router"
+
+import { auth } from "../src/firebase"
 import { useAuth } from "../src/contexts/AuthContext"
+
 import axios from "axios"
 
 import { Spinner } from "@chakra-ui/react"

@@ -1,5 +1,5 @@
-import { ChakraProvider } from "@chakra-ui/react"
 import { AuthProvider } from "../src/contexts/AuthContext"
+import { ChakraProvider } from "@chakra-ui/react"
 import Layout from "../src/components/Layout"
 
 import "../src/styles/global.scss"

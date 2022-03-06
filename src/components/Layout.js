@@ -1,5 +1,4 @@
 import { Container, Center, Flex } from "@chakra-ui/react"
-import dynamic from "next/dynamic"
 import { ColorModeSwitch } from "./ColorModeSwitch"
 
 const Layout = ({ children }) => {

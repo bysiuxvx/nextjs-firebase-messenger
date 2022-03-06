@@ -1,5 +1,9 @@
 import React from "react"
 
+import Head from "next/head"
+import dynamic from "next/dynamic"
+import Image from "next/image"
+
 import {
   Container,
   Flex,
@@ -10,12 +14,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react"
-
-import dynamic from "next/dynamic"
 import logo_svg from "../svg/bullterrier.svg"
-import Image from "next/image"
-
-import Head from "next/head"
 
 const ChatWindow = ({ user, handleLogout }) => {
   const ChatEngine = dynamic(

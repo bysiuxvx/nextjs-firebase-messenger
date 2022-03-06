@@ -1,6 +1,6 @@
-import { auth } from "../src/firebase"
 import dynamic from "next/dynamic"
 
+import { auth } from "../src/firebase"
 import {
   FacebookAuthProvider,
   GoogleAuthProvider,
